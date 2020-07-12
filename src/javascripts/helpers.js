@@ -1,6 +1,6 @@
 /* global XMLHttpRequest */
 
-function get (url) {
+function get(url) {
   // Return a new promise.
   return new Promise((resolve, reject) => {
     // Do the usual XHR stuff
@@ -31,7 +31,7 @@ function get (url) {
   })
 }
 
-function post (url, params) {
+function post(url, params) {
   // Return a new promise.
   return new Promise((resolve, reject) => {
     // Do the usual XHR stuff
@@ -46,6 +46,7 @@ function post (url, params) {
         // Resolve the promise with the response text
         resolve(JSON.parse(req.response))
       } else {
+        console.log(req);
         // Otherwise reject with the status text
         // which will hopefully be a meaningful error
         reject(Error(req.statusText))

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import '../stylesheets/DownloadForm.scss'
 
 class DownloadForm extends Component {
-  componentDidMount () {
+  componentDidMount() {
   }
 
-  render () {
+  render() {
     return (
       <form className='downloadForm' onSubmit={this.props.onSubmit}>
+        <input className='downloadForm__psw' type='password' /><br />
+
         <input className='downloadForm__input' type='text' />
         <button className='downloadForm__btn'>▶</button>
       </form>

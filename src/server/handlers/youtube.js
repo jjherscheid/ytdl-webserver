@@ -3,7 +3,7 @@ const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
 const youtubeDl = require('@microlink/youtube-dl')
 
-function exists (filename, cb) {
+function exists(filename, cb) {
   fs.access(filename, fs.F_OK, (err) => {
     if (!err) {
       cb(true)
@@ -13,20 +13,17 @@ function exists (filename, cb) {
   })
 }
 
-function download (url, options = {
+function download(url, options = {
   path: 'downloads',
   audioOnly: false
 }) {
   return new Promise((resolve, reject) => {
-    let format = 'mp4'
-    if (options.audioOnly) {
-      format = 'mp3'
-    }
+    let format = 'mp4' //  webm = '"bestvideo,bestaudio"', mp4 = 'mp4'
 
     // TODO Add proper support for options
     const video = youtubeDl(url,
       // Optional arguments passed to youtube-dl.
-      ['--format=18'],
+      ['--format=mp4'],
       // Additional options can be given for calling `child_process.execFile()`.
       { cwd: __dirname, maxBuffer: Infinity })
 

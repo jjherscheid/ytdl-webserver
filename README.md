@@ -24,7 +24,7 @@ npm install && npm start
 ### As a docker image
 #### Basic
 ```
-docker run --name ytdl -d -p 3000:3000 algram/ytdl-webserver
+docker run --name ytdl -d -p 3000:3000 jjherscheid/ytdl-webserver
 ```
 
 #### Advanced
@@ -46,3 +46,6 @@ This will start webpack and a dev server on `localhost:8080`
 
 ## License
 MIT
+
+
+index.docker.io
